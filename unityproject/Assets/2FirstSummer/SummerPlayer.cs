@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayController : MonoBehaviour
+public class SummerPlayer : MonoBehaviour
 {
-    public Rigidbody2D rb;
     
+    private Rigidbody2D rb;
+    [Header("基本组件")]
     public Animator anim;
     public Collider2D coll;
     public Collider2D disColl;
@@ -18,10 +19,20 @@ public class PlayController : MonoBehaviour
     public bool isGround;
     public bool jumpPressed;
 
+    [Header("触发")]
+    public GameObject buttonW;
+    public GameObject buttonF;
+    public Transform sea;
+    public Transform cat_LeftCheck;
+    public Transform cat_RightCheck;
+    public Transform cat;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -31,11 +42,11 @@ public class PlayController : MonoBehaviour
 
         Jump();
         //跳跃检测
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGround)
         {
             jumpPressed = true;
         }
-
+        GoSea();
 
 
     }
@@ -44,7 +55,9 @@ public class PlayController : MonoBehaviour
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);//
 
+        
         Movement();
+        
     }
 
     //人物移动
@@ -71,10 +84,44 @@ public class PlayController : MonoBehaviour
         if (jumpPressed && isGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
             jumpPressed = false;
+
             //anim.SetBool("jumping", true);
-            
+
         }
     }
+
+    void GoSea()
+    {
+        float count = 1;
+        if(cat.position.x>=sea.position.x && count==1)
+        {
+            buttonW.SetActive(true);
+            
+        }
+
+        if(buttonW.activeSelf && Input.GetKeyDown(KeyCode.W))
+        {
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+            Invoke("Tumble", 3);
+            count--;
+            buttonW.SetActive(false);
+        }
+
+        if (buttonF.activeSelf && Input.GetKeyDown(KeyCode.F))
+        {
+            //站立动画
+            Invoke("Tumble", 1);
+        }
+
+    }
+
+    //摔倒
+    void Tumble()
+    {
+        //播放摔倒动画
+        buttonF.SetActive(true);//出现buttonF
+        
+    }
+
 }

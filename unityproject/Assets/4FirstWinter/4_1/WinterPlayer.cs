@@ -22,7 +22,7 @@ public class WinterPlayer : MonoBehaviour
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
-
+    public GameObject diary;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +42,15 @@ public class WinterPlayer : MonoBehaviour
         {
             jumpPressed = true;
         }
-
-
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            diary.SetActive(true);
+            Time.timeScale = 0;
+        }
+        if(!diary.activeSelf)
+        {
+            Time.timeScale = 1;
+        }
 
     }
 

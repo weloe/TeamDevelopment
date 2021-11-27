@@ -2,33 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayController : MonoBehaviour
+public class FW2Player : MonoBehaviour
 {
-    public Rigidbody2D rb;
     
+    [Header("基本组件")]
+    public Rigidbody2D rb;
     public Animator anim;
     public Collider2D coll;
     public Collider2D disColl;
-    public float speed;
+
     [Header("跳跃参数")]
     public Transform groundCheck;
     public LayerMask ground;
-    
+    public float speed;
     public float jumpForce;
     public bool isGround;
     public bool jumpPressed;
 
-    [Header("靠近猫触发")]
-    public GameObject approachButtonW;
+    [Header("触发")]
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
-    
+    public GameObject diary;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -38,12 +39,19 @@ public class PlayController : MonoBehaviour
 
         Jump();
         //跳跃检测
-        if (Input.GetButtonDown("Jump") && isGround)
+        /*if (Input.GetButtonDown("Jump") && isGround)
         {
             jumpPressed = true;
         }
-
-
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            diary.SetActive(true);
+            Time.timeScale = 0;
+        }
+        if (!diary.activeSelf)
+        {
+            Time.timeScale = 1;
+        }*/
 
     }
 
@@ -51,8 +59,9 @@ public class PlayController : MonoBehaviour
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);//
 
-        IsApproach();
+
         Movement();
+
     }
 
     //人物移动
@@ -79,44 +88,10 @@ public class PlayController : MonoBehaviour
         if (jumpPressed && isGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
             jumpPressed = false;
+
             //anim.SetBool("jumping", true);
-            
+
         }
     }
-
-    //接近猫
-    void IsApproach()
-    {
-        
-        if (transform.position.x >= cat_LeftCheck.transform.position.x && transform.position.x <= cat_RightCheck.transform.position.x)
-        {
-
-            approachButtonW.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.W))
-            {
-                //向前走动画
-            }
-            
-        }
-        else
-        {
-
-            approachButtonW.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                //向前走动画
-            }
-
-        }
-
-    }
-
-
-
-
-
-
-
 }

@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DiaryController : MonoBehaviour
 {
-    public GameObject diary_ButtonF;
+    public GameObject diary_Button;
     public GameObject diary_Text;
+    public GameObject keyPrompt;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="Player")
         {
-            diary_ButtonF.SetActive(true);
+            //diary_Button.SetActive(true);
+            keyPrompt.SetActive(true);
         }
 
     }
@@ -20,15 +22,25 @@ public class DiaryController : MonoBehaviour
     {
         if(collision.tag=="Player")
         {
-            diary_ButtonF.SetActive(false);
+            //diary_Button.SetActive(false);
+            keyPrompt.SetActive(false);
             diary_Text.SetActive(false);
         }
     }
     private void Update()
     {
-        if(diary_ButtonF.activeSelf&&Input.GetKeyDown(KeyCode.Tab))
+
+        if (keyPrompt.activeSelf &&Input.GetKeyDown(KeyCode.Tab))
         {
+            //diary_Button.SetActive(true);
             diary_Text.SetActive(true);
+            keyPrompt.SetActive(false);
+            Time.timeScale = 0;
+        }
+
+        if(!diary_Text.activeSelf)
+        {
+            Time.timeScale = 1;
         }
     }
 

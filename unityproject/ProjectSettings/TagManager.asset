@@ -58,3 +58,6 @@ TagManager:
   - name: Dialog
     uniqueID: 3094886845
     locked: 0
+  - name: front
+    uniqueID: 1386843891
+    locked: 0

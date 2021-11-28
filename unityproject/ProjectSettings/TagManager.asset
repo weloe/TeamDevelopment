@@ -10,6 +10,7 @@ TagManager:
   - Door
   - CatCheck
   - SeaCheck
+  - ViewPlatform
   layers:
   - Default
   - TransparentFX

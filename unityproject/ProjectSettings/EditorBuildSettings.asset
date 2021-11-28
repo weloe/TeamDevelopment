@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/3FirstFall.unity
     guid: d6e5230822d8c244b9d2b3220d0dd37a
   - enabled: 1
+    path: Assets/Scenes/ViewPlatform.unity
+    guid: 6829bd3bbadb4da4891d3a071f2179d2
+  - enabled: 1
     path: Assets/Scenes/4FirstWinter.unity
     guid: ec54ab4b5a0e80f43b9b812db2de279f
   - enabled: 1
@@ -23,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/5SecondSpring.unity
     guid: e14bbe32c8260a34188ab89693f7ac7b
+  - enabled: 1
+    path: Assets/Scenes/Cemetery.unity
+    guid: 299c5d33643386c49bb1d5829a2034d7
   - enabled: 1
     path: Assets/Scenes/6End.unity
     guid: 38d38bbf50481d449947e92ca01edfe2

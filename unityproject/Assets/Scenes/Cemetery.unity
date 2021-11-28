@@ -804,24 +804,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 477872749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed8c02b5043fdb40ba88ebce5a5ec56, type: 3}
+  m_Script: {fileID: 11500000, guid: e7ba6156d86ab9d449a4624a9a2cd3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 477872756}
-  coll: {fileID: 0}
-  disColl: {fileID: 0}
-  groundCheck: {fileID: 0}
+  coll: {fileID: 477872753}
+  disColl: {fileID: 477872754}
+  groundCheck: {fileID: 2060548607}
   ground:
     serializedVersion: 2
-    m_Bits: 0
-  speed: 0
-  jumpForce: 0
+    m_Bits: 64
+  speed: 5
+  jumpForce: 12
   isGround: 0
   jumpPressed: 0
   cat_LeftCheck: {fileID: 0}
   cat_RightCheck: {fileID: 0}
   cat: {fileID: 0}
-  diary: {fileID: 0}
 --- !u!58 &477872753
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,0 +1,106 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+public class PriestController : MonoBehaviour
+{
+    public Rigidbody2D rb;
+    public Transform viewPlatform;
+    //public GameObject buttonW;
+    public float speed;
+
+    public GameObject memory;
+    public GameObject keyPrompt;
+    public GameObject diary5;
+    public GameObject goKeyPrompt;
+    public GameObject dialog1;
+    public GameObject dialog2;
+
+
+
+    private void Start()
+    {
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        //打开日记
+        if(keyPrompt.activeSelf && Input.GetKeyDown(KeyCode.Tab))
+        {
+            keyPrompt.SetActive(false);
+            diary5.SetActive(true);
+        }
+        if(goKeyPrompt.activeSelf && Input.GetKeyDown(KeyCode.W))
+        {
+            dialog1.SetActive(true);
+            goKeyPrompt.SetActive(false);
+            Invoke("StartDialog2", 3);
+            Invoke("LoadViewPlatform", 6);
+
+        }
+        if(goKeyPrompt.activeSelf && Input.GetKeyDown(KeyCode.D))
+        {
+            dialog1.SetActive(true);
+            goKeyPrompt.SetActive(false);
+            Invoke("StartDialog2", 3);
+            Invoke("LoadCemetery", 6);
+        }
+
+    }
+
+
+
+
+    //启动回忆图
+    void StartMemory()
+    {
+        memory.SetActive(true);
+    }
+
+    //启动Tab提示
+    void StartPrompt()
+    {
+        memory.SetActive(false);
+        keyPrompt.SetActive(true);
+    }
+
+    void StartGoKeyPrompt()
+    {
+        goKeyPrompt.SetActive(true);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag=="ViewPlatform")
+        {
+            speed = 0;
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+            //女孩侧头看了眼观景台的方向，又低头看了眼膝盖上的盒子
+            Invoke("StartMemory", 3);//延迟启动回忆
+            Invoke("StartPrompt", 6);//延迟启动按键提示Tab
+
+        }
+    }
+
+
+    void StartDialog2()
+    {
+        dialog1.SetActive(false);
+        dialog2.SetActive(true);
+    }
+
+    void LoadViewPlatform()
+    {
+        SceneManager.LoadScene("ViewPlatform");
+    }
+    void LoadCemetery()
+    {
+        speed = 2;
+        dialog2.SetActive(false);
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+
+}

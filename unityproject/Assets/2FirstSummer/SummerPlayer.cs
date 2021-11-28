@@ -26,7 +26,7 @@ public class SummerPlayer : MonoBehaviour
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
-
+    public GameObject black;
 
     // Start is called before the first frame update
     void Start()
@@ -99,15 +99,19 @@ public class SummerPlayer : MonoBehaviour
 
         if(buttonW.activeSelf && Input.GetKeyDown(KeyCode.W))
         {
+            buttonW.SetActive(false);
             //向海走的动画
             Invoke("Tumble", 3);
-            buttonW.SetActive(false);
+            
         }
 
-        if (buttonF.activeSelf && Input.GetKeyDown(KeyCode.F))
+
+        if (Input.GetKeyDown(KeyCode.F))
         {
             //站立动画
+            buttonF.SetActive(false);
             Invoke("Tumble", 1);
+            //
         }
 
     }
@@ -136,5 +140,5 @@ public class SummerPlayer : MonoBehaviour
         buttonF.SetActive(true);//出现buttonF
         
     }
-
+    
 }

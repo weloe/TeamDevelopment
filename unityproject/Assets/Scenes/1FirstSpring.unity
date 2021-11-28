@@ -1022,7 +1022,8 @@ MonoBehaviour:
   jumpForce: 12
   isGround: 0
   jumpPressed: 0
-  approachButtonW: {fileID: 1201165160}
+  approachButtonF: {fileID: 1201165160}
+  cat_ButtonF: {fileID: 1721452783}
   cat_LeftCheck: {fileID: 1208280209}
   cat_RightCheck: {fileID: 1986370120}
   cat: {fileID: 924255136}
@@ -1322,7 +1323,6 @@ GameObject:
   - component: {fileID: 924255136}
   - component: {fileID: 924255135}
   - component: {fileID: 924255137}
-  - component: {fileID: 924255139}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Cat
@@ -1414,19 +1414,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &924255139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924255134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ff31ec7242dcb4b8a2afa5fb6cc44d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cat_ButtonF: {fileID: 1721452783}
 --- !u!1 &1029590148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,7 +1498,7 @@ GameObject:
   - component: {fileID: 1201165161}
   - component: {fileID: 1201165162}
   m_Layer: 0
-  m_Name: approachButtonW
+  m_Name: approachButtonF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,9 +1673,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1208280209}
+  - component: {fileID: 1208280210}
   m_Layer: 0
   m_Name: leftCheck
-  m_TagString: Untagged
+  m_TagString: CatCheck
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1707,6 +1695,32 @@ Transform:
   m_Father: {fileID: 924255136}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1208280210
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208280208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.2649348, y: 1.7412378}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.5298696, y: 3.8578155}
+  m_EdgeRadius: 0
 --- !u!1 &1659046503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1721452784
 Transform:
   m_ObjectHideFlags: 0
@@ -1941,7 +1955,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1986370120
 Transform:
   m_ObjectHideFlags: 0

@@ -19,7 +19,8 @@ public class PlayController : MonoBehaviour
     public bool jumpPressed;
 
     [Header("靠近猫触发")]
-    public GameObject approachButtonW;
+    public GameObject approachButtonF;
+    public GameObject cat_ButtonF;
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
@@ -43,7 +44,17 @@ public class PlayController : MonoBehaviour
             jumpPressed = true;
         }
 
+        if(approachButtonF.activeSelf && Input.GetKeyDown(KeyCode.F))
+        {
+            approachButtonF.SetActive(false);
+            //向前走动画
+        }
+        if(cat_ButtonF.activeSelf&&Input.GetKeyDown(KeyCode.F))
+        {
+            cat_ButtonF.SetActive(false);
+            //撸猫动画
 
+        }
 
     }
 
@@ -51,7 +62,7 @@ public class PlayController : MonoBehaviour
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);//
 
-        IsApproach();
+        
         Movement();
     }
 
@@ -87,31 +98,35 @@ public class PlayController : MonoBehaviour
     }
 
     //接近猫
-    void IsApproach()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (transform.position.x >= cat_LeftCheck.transform.position.x && transform.position.x <= cat_RightCheck.transform.position.x)
+        if(collision.tag=="CatCheck")
         {
+            approachButtonF.SetActive(true);
 
-            approachButtonW.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.W))
-            {
-                //向前走动画
-            }
-            
         }
-        else
+        if (collision.tag == "Cat")
         {
-
-            approachButtonW.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                //向前走动画
-            }
-
+            cat_ButtonF.SetActive(true);
         }
 
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag=="CatCheck")
+        {
+            approachButtonF.SetActive(false);
+        }
+
+        if (collision.tag == "Cat")
+        {
+            cat_ButtonF.SetActive(false);
+        }
+    }
+
+    
+
+
 
 
 

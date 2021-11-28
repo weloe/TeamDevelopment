@@ -5,6 +5,8 @@ using UnityEngine;
 public class CatController : MonoBehaviour
 {
     public GameObject cat_ButtonF;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")

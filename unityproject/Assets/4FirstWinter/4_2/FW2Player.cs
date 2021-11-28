@@ -24,6 +24,8 @@ public class FW2Player : MonoBehaviour
     public Transform cat_RightCheck;
     public Transform cat;
     public GameObject diary;
+    public GameObject buttonF;
+    public GameObject buttonF1;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,18 @@ public class FW2Player : MonoBehaviour
             Time.timeScale = 1;
         }*/
 
+
+        if(buttonF1.activeSelf && Input.GetKeyDown(KeyCode.F))
+        {
+            buttonF1.SetActive(true);
+            //¿ªÃÅ
+        }
+
+        if (buttonF.activeSelf && Input.GetKeyDown(KeyCode.F))
+        {
+            buttonF.SetActive(false);
+            //Éú»ð
+        }
     }
 
     void FixedUpdate()
@@ -80,6 +94,7 @@ public class FW2Player : MonoBehaviour
         }
 
 
+
     }
 
     //ÌøÔ¾
@@ -94,4 +109,26 @@ public class FW2Player : MonoBehaviour
 
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if(collision.tag=="Door")
+        {
+            buttonF1.SetActive(true);
+        }
+
+
+        if (collision.tag == "FirePlace")
+        {
+            buttonF.SetActive(true);
+
+        }
+        
+    }
+
+
+
+
+
+
 }

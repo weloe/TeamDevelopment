@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Cat
   - Priest
+  - FirePlace
+  - Door
+  - CatCheck
+  - SeaCheck
   layers:
   - Default
   - TransparentFX

@@ -91,20 +91,16 @@ public class SummerPlayer : MonoBehaviour
         }
     }
 
+
+
     void GoSea()
     {
-        float count = 1;
-        if(cat.position.x>=sea.position.x && count==1)
-        {
-            buttonW.SetActive(true);
-            
-        }
+        
 
         if(buttonW.activeSelf && Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            //向海走的动画
             Invoke("Tumble", 3);
-            count--;
             buttonW.SetActive(false);
         }
 
@@ -115,7 +111,24 @@ public class SummerPlayer : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "SeaCheck")
+        {
+            buttonW.SetActive(true);
 
+        }
+
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "SeaCheck")
+        {
+            buttonW.SetActive(false);
+        }
+
+    }
     //摔倒
     void Tumble()
     {

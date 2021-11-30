@@ -22,13 +22,15 @@ public class FallPlayer : MonoBehaviour
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
-
-
+    [Header("日记")]
+    public GameObject diary;
+    bool sum = false;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
 
+        rb = GetComponent<Rigidbody2D>();
+        Invoke("revealDialog", 2f);//延迟显示日记内容
     }
 
     // Update is called once per frame
@@ -42,8 +44,8 @@ public class FallPlayer : MonoBehaviour
         {
             jumpPressed = true;
         }
-        
 
+        SwitchDialog();
 
     }
 
@@ -83,6 +85,27 @@ public class FallPlayer : MonoBehaviour
             jumpPressed = false;
 
             //anim.SetBool("jumping", true);
+
+        }
+    }
+    //日记显示
+    void revealDialog()
+    {
+        diary.SetActive(true);
+        sum=true;
+    }
+    void SwitchDialog()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && sum == true)
+        {
+            sum = false;
+            diary.SetActive(false);
+
+        }
+        if (Input.GetKeyDown(KeyCode.Tab) && sum == false)
+        {
+            sum = true;
+            diary.SetActive(true);
 
         }
     }

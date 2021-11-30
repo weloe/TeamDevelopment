@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/2FirstSummer.unity
     guid: 915b66f3486b9d94fa4e6e2fa12d1d59
   - enabled: 1
+    path: Assets/Scenes/2FS1.unity
+    guid: 77b018566ba28344797f5cdf9496bbc9
+  - enabled: 1
     path: Assets/Scenes/3FirstFall.unity
     guid: d6e5230822d8c244b9d2b3220d0dd37a
   - enabled: 1

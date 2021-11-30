@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SummerPlayer : MonoBehaviour
 {
@@ -111,6 +112,9 @@ public class SummerPlayer : MonoBehaviour
             //站立动画
             buttonF.SetActive(false);
             Invoke("Tumble", 1);
+            black.SetActive(true);
+            
+
             //
         }
 
@@ -138,7 +142,12 @@ public class SummerPlayer : MonoBehaviour
     {
         //播放摔倒动画
         buttonF.SetActive(true);//出现buttonF
-        
+        Invoke("LoadNext", 3);
+    }
+
+    void LoadNext()
+    {
+        SceneManager.LoadScene("2FS1");
     }
     
 }

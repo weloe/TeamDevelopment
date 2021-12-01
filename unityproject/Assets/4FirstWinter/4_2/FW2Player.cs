@@ -56,11 +56,11 @@ public class FW2Player : MonoBehaviour
         }*/
 
 
-        if(buttonF1.activeSelf && Input.GetKeyDown(KeyCode.F))
+        /*if(buttonF1.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             buttonF1.SetActive(true);
             //¿ªÃÅ
-        }
+        }*/
 
         if (buttonF.activeSelf && Input.GetKeyDown(KeyCode.F))
         {

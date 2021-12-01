@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayController : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -30,7 +30,10 @@ public class PlayController : MonoBehaviour
     public float buttonTime;
     public bool isLong=false;
     public GameObject longButtonF;
-
+    [Header("结束")]
+    
+    public SpriteRenderer back;
+    public GameObject black;
 
 
     // Start is called before the first frame update
@@ -67,6 +70,10 @@ public class PlayController : MonoBehaviour
         {
             longButtonF.SetActive(false);
             //抱猫动画
+            back.color = new Color(1, 1, 1, 1);
+            Camera.main.orthographicSize = 10;
+            Invoke("StartBlack", 3);
+            Invoke("LoadNext", 4);
         }
 
         //长按判定
@@ -91,11 +98,15 @@ public class PlayController : MonoBehaviour
             }
         }
 
+    }
 
-
-
-
-
+    void StartBlack()
+    {
+        black.SetActive(true);
+    }
+    void LoadNext()
+    {
+        SceneManager.LoadScene("2FirstSummer");
     }
     void StartLongButton()
     {

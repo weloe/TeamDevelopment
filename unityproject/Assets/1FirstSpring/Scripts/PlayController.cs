@@ -24,7 +24,14 @@ public class PlayController : MonoBehaviour
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
+
+    [Header("长按触发")]
+    public float duration=2;
+    public float buttonTime;
+    public bool isLong=false;
     public GameObject longButtonF;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,15 +63,43 @@ public class PlayController : MonoBehaviour
             Invoke("StartLongButton", 3);//启动抱猫按钮F
 
         }
-        if(longButtonF.activeSelf && Input.GetKeyDown(KeyCode.F))
+        if(longButtonF.activeSelf && isLong)//Input.GetKeyDown(KeyCode.F)
         {
             longButtonF.SetActive(false);
             //抱猫动画
         }
 
+        //长按判定
+        if (longButtonF.activeSelf)
+        {
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                //if (Input.GetKey(KeyCode.F))
+                //{
+                    buttonTime = Time.time + duration;
+
+                //}
+            }
+
+            if (Input.GetKeyUp(KeyCode.F))
+            {
+                if (buttonTime < Time.time)
+                {
+                    isLong = true;
+
+                }
+            }
+        }
+
+
+
+
+
+
     }
     void StartLongButton()
     {
+        
         longButtonF.SetActive(true);
     }
 

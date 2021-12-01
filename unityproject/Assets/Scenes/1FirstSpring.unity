@@ -1027,6 +1027,9 @@ MonoBehaviour:
   cat_LeftCheck: {fileID: 1208280209}
   cat_RightCheck: {fileID: 1986370120}
   cat: {fileID: 924255136}
+  duration: 2
+  buttonTime: 0
+  isLong: 0
   longButtonF: {fileID: 1494517279}
 --- !u!58 &477872753
 CircleCollider2D:
@@ -1964,7 +1967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1952419337
 RectTransform:
   m_ObjectHideFlags: 0

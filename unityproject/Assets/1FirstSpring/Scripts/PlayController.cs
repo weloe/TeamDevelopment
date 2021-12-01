@@ -24,7 +24,7 @@ public class PlayController : MonoBehaviour
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
-    
+    public GameObject longButtonF;
 
     // Start is called before the first frame update
     void Start()
@@ -53,9 +53,19 @@ public class PlayController : MonoBehaviour
         {
             cat_ButtonF.SetActive(false);
             //ß£Ã¨¶¯»­
+            Invoke("StartLongButton", 3);//Æô¶¯±§Ã¨°´Å¥F
 
         }
+        if(longButtonF.activeSelf && Input.GetKeyDown(KeyCode.F))
+        {
+            longButtonF.SetActive(false);
+            //±§Ã¨¶¯»­
+        }
 
+    }
+    void StartLongButton()
+    {
+        longButtonF.SetActive(true);
     }
 
     void FixedUpdate()

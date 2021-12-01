@@ -70,6 +70,7 @@ public class DialogSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D) && index == textList.Count-1)
         {
+            Time.timeScale = 1;
             gameObject.SetActive(false);
             index = 0;
             return;

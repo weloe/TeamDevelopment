@@ -8,10 +8,13 @@ public class DiaryController : MonoBehaviour
     public GameObject diary_Text;
     public GameObject keyPrompt;
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="Player")
         {
+            Time.timeScale = 0;
             //diary_Button.SetActive(true);
             keyPrompt.SetActive(true);
         }
@@ -38,10 +41,7 @@ public class DiaryController : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if(!diary_Text.activeSelf)
-        {
-            Time.timeScale = 1;
-        }
+        
     }
 
 }

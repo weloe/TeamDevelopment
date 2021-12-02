@@ -40,8 +40,15 @@ public class DiaryController : MonoBehaviour
             keyPrompt.SetActive(false);
             Time.timeScale = 0;
         }
+        //if (diary_Text.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    //diary_Button.SetActive(true);
+        //    diary_Text.SetActive(false);
+         
+        //    Time.timeScale = 0;
+        //}
 
-        
+
     }
 
 }

@@ -10,6 +10,9 @@ public class PlayController : MonoBehaviour
     public Collider2D coll;
     public Collider2D disColl;
     public float speed;
+    [Header("开关笔记本")]
+    public GameObject diary_Text;
+    public GameObject keyPrompt;
     [Header("跳跃参数")]
     public Transform groundCheck;
     public LayerMask ground;
@@ -45,6 +48,21 @@ public class PlayController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //开关笔记本
+        if ( Input.GetKeyDown(KeyCode.Tab))
+        {
+            
+            diary_Text.SetActive(true);
+            
+            Time.timeScale = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape)&& diary_Text.activeSelf)
+        {
+            
+            diary_Text.SetActive(false);
+            
+            Time.timeScale = 1;
+        }
 
 
         Jump();

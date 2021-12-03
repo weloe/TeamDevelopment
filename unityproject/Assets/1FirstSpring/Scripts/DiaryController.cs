@@ -7,7 +7,7 @@ public class DiaryController : MonoBehaviour
     public GameObject diary_Button;
     public GameObject diary_Text;
     public GameObject keyPrompt;
-
+    public Collider2D coll;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +28,7 @@ public class DiaryController : MonoBehaviour
             //diary_Button.SetActive(false);
             keyPrompt.SetActive(false);
             diary_Text.SetActive(false);
+            coll.enabled = false;
         }
     }
     private void Update()

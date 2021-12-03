@@ -70,7 +70,12 @@ public class FallPlayer : MonoBehaviour
         //面向的方向
         if (facedirection != 0)
         {
+            anim.SetBool("Move3", true);
             transform.localScale = new Vector3(facedirection, 1, 1);
+        }
+        if (facedirection == 0)
+        {
+            anim.SetBool("Move3", false);
         }
 
 

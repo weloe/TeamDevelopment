@@ -74,6 +74,11 @@ public class SummerPlayer : MonoBehaviour
         if (facedirection != 0)
         {
             transform.localScale = new Vector3(facedirection, 1, 1);
+            anim.SetBool("Move2", true);
+        }
+        if (facedirection == 0)
+        {
+            anim.SetBool("Move2", false);
         }
 
 

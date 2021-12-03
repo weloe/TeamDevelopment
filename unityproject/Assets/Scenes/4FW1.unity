@@ -876,7 +876,7 @@ Transform:
   - {fileID: 1981374502}
   - {fileID: 835242496}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &477872752
 MonoBehaviour:
@@ -981,7 +981,7 @@ Animator:
   m_GameObject: {fileID: 477872749}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a46a1f8343293649a2c4e535ee385e3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6668,7 +6668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5ec41d3aa87c5419ca14b5a0f512da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonF: {fileID: 2060548606}
+  buttonF: {fileID: 0}
 --- !u!212 &896060233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6822,6 +6822,7 @@ MonoBehaviour:
   disColl: {fileID: 924789909}
   time: 0
   duration: 0.5
+  count: 2
   isButton: 0
 --- !u!212 &924789907
 SpriteRenderer:
@@ -6973,7 +6974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1596866447}
-  player: {fileID: 477872749}
+  player: {fileID: 0}
   speed: 5
 --- !u!50 &1596866447
 Rigidbody2D:
@@ -7103,7 +7104,7 @@ Transform:
   m_Children:
   - {fileID: 148017386}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1758087693
 GameObject:

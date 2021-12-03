@@ -75,7 +75,12 @@ public class WinterPlayer : MonoBehaviour
         //面向的方向
         if (facedirection != 0)
         {
+            anim.SetBool("Move4", true);
             transform.localScale = new Vector3(facedirection, 1, 1);
+        }
+        if (facedirection == 0)
+        {
+            anim.SetBool("Move4", false);
         }
 
 

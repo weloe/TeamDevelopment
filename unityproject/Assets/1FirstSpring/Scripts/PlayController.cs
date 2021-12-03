@@ -152,7 +152,12 @@ public class PlayController : MonoBehaviour
         //面向的方向
         if (facedirection != 0)
         {
+            anim.SetBool("Move", true);
             transform.localScale = new Vector3(facedirection, 1, 1);
+        }
+        if(facedirection == 0)
+        {
+            anim.SetBool("Move", false);
         }
 
 

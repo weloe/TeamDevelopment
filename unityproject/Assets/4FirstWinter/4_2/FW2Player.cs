@@ -26,6 +26,10 @@ public class FW2Player : MonoBehaviour
     public GameObject diary;
     public GameObject buttonF;
     public GameObject buttonF1;
+    public GameObject fire;
+
+    public GameObject back1;
+    public GameObject back2;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +69,9 @@ public class FW2Player : MonoBehaviour
         if (buttonF.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             buttonF.SetActive(false);
+            fire.SetActive(true);
+            back1.SetActive(false);
+            back2.SetActive(true);
             //Éú»ð
         }
     }

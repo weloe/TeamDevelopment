@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class FWDialogSystem : MonoBehaviour
 {
     public Text textLabel;
@@ -71,8 +71,9 @@ public class FWDialogSystem : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
+            SceneManager.LoadScene("5SecondSpring");
             return;
-
+            
         }
 
 

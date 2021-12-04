@@ -7,6 +7,7 @@ public class FW2DoorController : MonoBehaviour
 
     public GameObject doorButtonF;
     public Collider2D disColl;
+    public Collider2D disColl1;
     public float time;
     public float duration;
     public float count = 2;
@@ -38,7 +39,10 @@ public class FW2DoorController : MonoBehaviour
                 if(Time.time>time)
                 {
                     disColl.enabled = true;
+                    disColl1.enabled = false;
                     doorButtonF.SetActive(false);
+                    Camera.main.orthographicSize = 3;
+
                 }
                 
                 

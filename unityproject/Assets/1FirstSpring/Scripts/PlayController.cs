@@ -39,6 +39,7 @@ public class PlayController : MonoBehaviour
     public GameObject black;
     public float facedirection;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,8 +92,9 @@ public class PlayController : MonoBehaviour
             longButtonF.SetActive(false);
             //±§Ã¨¶¯»­
             anim.SetBool("baomao", true);
+
             back.color = new Color(1, 1, 1, 1);
-            Camera.main.orthographicSize = 10;
+            //Camera.main.orthographicSize = 10;
            
             //Invoke("StartBlack", 3);
             //Invoke("LoadNext", 4);

@@ -6,6 +6,7 @@ public class LightFlash : MonoBehaviour
 {
     public GameObject flash;
     public SpriteRenderer color1;
+    public AudioSource audio1;
     void Start()
     {
         
@@ -22,6 +23,7 @@ public class LightFlash : MonoBehaviour
         if(collision.tag=="Player")
         {
             flash.SetActive(true);
+            audio1.Play();
             color1.color = new Color(1, 1, 1, 1);
         }
     }

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CarController : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -9,7 +9,8 @@ public class CarController : MonoBehaviour
     
     public float speed;
     public GameObject buttonF;
-    
+    public Transform carCheck;
+    public GameObject black;
     void Start()
     {
 
@@ -19,18 +20,15 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
-        /*if (transform.position.x >= player.position.x)
+
+
+        if (transform.position.x >= carCheck.position.x)
         {
-            speed = 0;
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-            buttonF.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Destroy(buttonF);
-                
-                Invoke("CarMove", 3);
-            }
-        }*/
+
+            black.SetActive(true);
+            Invoke("LoadNext", 1);
+            
+        }
         //½ÇÉ«ÉÏ³µ
         if (buttonF.activeSelf && Input.GetKeyDown(KeyCode.F) )
         {
@@ -55,6 +53,11 @@ public class CarController : MonoBehaviour
 
     }
 
+    void LoadNext()
+    {
+        SceneManager.LoadScene("4FW1");
+
+    }
 
 
 }

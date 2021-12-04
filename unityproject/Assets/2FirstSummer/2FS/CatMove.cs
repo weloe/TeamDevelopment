@@ -9,7 +9,7 @@ public class CatMove : MonoBehaviour
     public Transform sea;
     //public GameObject buttonW;
     public float speed;
-
+    public Animator ani;    
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,10 @@ public class CatMove : MonoBehaviour
         if(transform.position.x>=sea.position.x)
         {
             speed = 0;
-            rb.velocity = new Vector2(speed, rb.velocity.y);
             
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+            ani.SetBool("CatMove1", false);
         }
+        
     }
 }

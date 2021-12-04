@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -13,6 +14,10 @@ public class DialogSystem : MonoBehaviour
 
     public TextAsset textFile;
     public int index;
+
+    public GameObject black;
+
+
 
     List<string> textList = new List<string>();
 
@@ -73,14 +78,26 @@ public class DialogSystem : MonoBehaviour
             Time.timeScale = 1;
             gameObject.SetActive(false);
             index = 0;
+            Invoke("StartBlack", 3);
+            Invoke("LoadNext", 4);
+
+
             return;
             
-        }
 
+        }
+        
 
 
     }
-
+    void StartBlack()
+    {
+        black.SetActive(true);
+    }
+    void LoadNext()
+    {
+        SceneManager.LoadScene("2FirstSummer");
+    }
 
 
 }

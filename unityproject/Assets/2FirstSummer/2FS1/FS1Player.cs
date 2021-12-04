@@ -20,6 +20,8 @@ public class FS1Player : MonoBehaviour
     public GameObject thankImage;
     public GameObject black;
     public GameObject diary2;
+    public GameObject thankDialog;
+    public GameObject cat;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +29,14 @@ public class FS1Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         Invoke("Dialog", 2);//启动对话
-        Invoke("ThankImage", 4);//启动感谢画面
+        Invoke("baomao", 2.8f);
+
+        Invoke("ThankDialog", 3);
+        //Invoke("ThankImage", 4);//启动感谢画面
         Invoke("Rub", 5);//
-        Invoke("StartBlack", 8);
+        Invoke("ShutImage", 6);
+        Invoke("StartBlack", 8);//
+
         Invoke("StartDiary2", 10);//启动日记
 
     }
@@ -69,6 +76,11 @@ public class FS1Player : MonoBehaviour
     {
         dialog.SetActive(true);
     }
+    void baomao()
+    {
+        cat.SetActive(false);
+    }    
+
     void ThankImage()
     {
         dialog.SetActive(false);
@@ -76,16 +88,27 @@ public class FS1Player : MonoBehaviour
 
         thankImage.SetActive(true);
     }
-
+    void ThankDialog()
+    {
+        dialog.SetActive(false);
+        thankDialog.SetActive(true);
+    }
     void Rub()
     {
         thankImage.SetActive(false);
+        thankDialog.SetActive(false);
         //动画
 
     }
 
+    void ShutImage()
+    {
+        startImage.SetActive(false);
+    }
+
     void StartBlack()
     {
+        
         black.SetActive(true);
 
     }
@@ -93,5 +116,6 @@ public class FS1Player : MonoBehaviour
     {
 
         diary2.SetActive(true);
+        
     }
 }

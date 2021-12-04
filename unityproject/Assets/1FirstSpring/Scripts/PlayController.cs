@@ -37,7 +37,7 @@ public class PlayController : MonoBehaviour
     
     public SpriteRenderer back;
     public GameObject black;
-
+    public float facedirection;
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +72,7 @@ public class PlayController : MonoBehaviour
             jumpPressed = true;
         }
 
-        if(approachButtonF.activeSelf && Input.GetKeyDown(KeyCode.F))
+        /*if(approachButtonF.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             approachButtonF.SetActive(false);
             //向前走动画
@@ -83,15 +83,24 @@ public class PlayController : MonoBehaviour
             //撸猫动画
             Invoke("StartLongButton", 3);//启动抱猫按钮F
 
-        }
+        }*/
         if(longButtonF.activeSelf && isLong)//Input.GetKeyDown(KeyCode.F)
         {
+            
+
             longButtonF.SetActive(false);
             //抱猫动画
+            anim.SetBool("baomao", true);
             back.color = new Color(1, 1, 1, 1);
             Camera.main.orthographicSize = 10;
-            Invoke("StartBlack", 3);
-            Invoke("LoadNext", 4);
+           
+            //Invoke("StartBlack", 3);
+            //Invoke("LoadNext", 4);
+        }
+        if(anim.GetBool("baomao"))
+        {
+            facedirection = Input.GetAxisRaw("Horizontal");
+            anim.SetFloat("baomaoMove", Mathf.Abs(facedirection));
         }
 
         //长按判定
@@ -179,7 +188,7 @@ public class PlayController : MonoBehaviour
     //接近猫
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="CatCheck")
+        /*if(collision.tag=="CatCheck")
         {
             approachButtonF.SetActive(true);
 
@@ -187,7 +196,7 @@ public class PlayController : MonoBehaviour
         if (collision.tag == "Cat")
         {
             cat_ButtonF.SetActive(true);
-        }
+        }*/
 
     }
     private void OnTriggerExit2D(Collider2D collision)

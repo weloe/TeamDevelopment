@@ -8,14 +8,13 @@ public class FSPscene : MonoBehaviour
     public GameObject black;
     public GameObject diary;
     public Animator anim;
-    public GameObject car;
-    public GameObject carCheck;
+    
 
     private void Start()
     {
         diary.SetActive(true);
-        anim.SetBool("fadeOut", false);
-        car.SetActive(false);
+        
+        
 
     }
     // Update is called once per frame
@@ -24,17 +23,10 @@ public class FSPscene : MonoBehaviour
         if (!diary.activeSelf)
         {
             anim.SetBool("fadeOut", true);
-            car.SetActive(true);
+            
         }
 
-        if (car.transform.position.x >= carCheck.transform.position.x)
-        {
-            anim.SetBool("fadeIn", true);
-            Invoke("Load", 1);
-        }
+        
     }
-    void Load()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    
 }

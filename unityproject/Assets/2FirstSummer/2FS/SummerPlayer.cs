@@ -48,7 +48,13 @@ public class SummerPlayer : MonoBehaviour
             jumpPressed = true;
         }
         GoSea();
+        if (transform.position.y >= 2)
+        {
+            speed = 0;
+            rb.velocity = new Vector2(rb.velocity.x, speed);
 
+            transform.localScale = new Vector3(1, 1, 1);
+        }
 
     }
 
@@ -106,8 +112,13 @@ public class SummerPlayer : MonoBehaviour
         if(buttonW.activeSelf && Input.GetKeyDown(KeyCode.W))
         {
             buttonW.SetActive(false);
+            anim.SetBool("seamove", true);
+
+            rb.velocity = new Vector2(rb.velocity.x, 4/3);
             //向海走的动画
+            
             Invoke("Tumble", 3);
+            speed = 0;
             
         }
 
@@ -147,6 +158,7 @@ public class SummerPlayer : MonoBehaviour
     {
         //播放摔倒动画
         buttonF.SetActive(true);//出现buttonF
+
         Invoke("LoadNext", 3);
     }
 

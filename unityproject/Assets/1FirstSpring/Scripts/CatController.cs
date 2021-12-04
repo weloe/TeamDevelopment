@@ -17,7 +17,12 @@ public class CatController : MonoBehaviour
                 //longButtonF.SetActive(true);
             }
         */
+        if (collision.tag == "Player")
+        {
 
+            longButtonF.SetActive(true);
+            //longButtonF.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

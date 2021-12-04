@@ -78,8 +78,8 @@ public class DialogSystem : MonoBehaviour
             Time.timeScale = 1;
             gameObject.SetActive(false);
             index = 0;
-            Invoke("StartBlack", 3);
-            Invoke("LoadNext", 4);
+            Invoke("StartBlack", 0);
+            Invoke("LoadNext", 1);
 
 
             return;

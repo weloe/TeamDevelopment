@@ -12,6 +12,10 @@ public class FW2DoorController : MonoBehaviour
     public float duration;
     public float count = 2;
     public bool isButton = false;
+    public AudioSource door;
+    public AudioSource house;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +31,11 @@ public class FW2DoorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(doorButtonF.activeSelf )
+        
+
+
+
+        if (doorButtonF.activeSelf )
         {
             if(Input.GetKeyDown(KeyCode.F) && count==2)
             {
@@ -41,8 +49,10 @@ public class FW2DoorController : MonoBehaviour
                     disColl.enabled = true;
                     disColl1.enabled = false;
                     doorButtonF.SetActive(false);
-                    Camera.main.orthographicSize = 3;
-
+                    Camera.main.orthographicSize = 4;
+                    door.Play();
+                    house.Play();
+                    //πÿ√≈∂Øª≠
                 }
                 
                 

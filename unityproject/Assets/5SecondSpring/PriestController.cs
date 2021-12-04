@@ -17,8 +17,8 @@ public class PriestController : MonoBehaviour
     public GameObject goKeyPrompt;
     public GameObject dialog1;
     public GameObject dialog2;
-
-
+    public GameObject player;
+    public Animator anim;
 
     private void Start()
     {
@@ -83,6 +83,13 @@ public class PriestController : MonoBehaviour
             Invoke("StartPrompt", 6);//延迟启动按键提示Tab
 
         }
+        if(collision.tag=="Hole")
+        {
+            speed = 0;
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+            player.SetActive(true);
+            anim.SetBool("SSPriest", true);
+        }
     }
 
 
@@ -94,7 +101,7 @@ public class PriestController : MonoBehaviour
 
     void LoadViewPlatform()
     {
-        SceneManager.LoadScene("ViewPlatform");
+        SceneManager.LoadScene("51SSViewPlatform");
     }
     void LoadCemetery()
     {
@@ -103,4 +110,5 @@ public class PriestController : MonoBehaviour
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }
 
+    
 }

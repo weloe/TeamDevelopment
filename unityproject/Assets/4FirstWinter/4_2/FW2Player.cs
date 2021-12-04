@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FW2Player : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class FW2Player : MonoBehaviour
     public GameObject buttonF;
     public GameObject buttonF1;
     public GameObject fire;
-
+    public Collider2D fireColl;
     public GameObject back1;
     public GameObject back2;
 
@@ -73,6 +74,7 @@ public class FW2Player : MonoBehaviour
             back1.SetActive(false);
             back2.SetActive(true);
             //Éú»ð
+            fireColl.enabled = false;
         }
     }
 
@@ -129,15 +131,19 @@ public class FW2Player : MonoBehaviour
         }
 
 
-        if (collision.tag == "FirePlace")
+        /*if (collision.tag == "FirePlace")
         {
             buttonF.SetActive(true);
 
-        }
+        }*/
         
     }
 
-
+    void LoadNext()
+    {
+        SceneManager.LoadScene("5SecondSpring");
+    }
+    
 
 
 

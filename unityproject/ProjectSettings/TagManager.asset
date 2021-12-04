@@ -12,6 +12,8 @@ TagManager:
   - SeaCheck
   - ViewPlatform
   - Car
+  - CemeteryCheck
+  - Hole
   layers:
   - Default
   - TransparentFX

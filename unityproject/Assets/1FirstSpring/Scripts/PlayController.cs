@@ -39,6 +39,8 @@ public class PlayController : MonoBehaviour
     public GameObject black;
     public float facedirection;
 
+    [Header("“Ù∆µ")]
+    public AudioSource baomao;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +94,7 @@ public class PlayController : MonoBehaviour
             longButtonF.SetActive(false);
             //±ß√®∂Øª≠
             anim.SetBool("baomao", true);
-
+            baomao.Play();
             back.color = new Color(1, 1, 1, 1);
             //Camera.main.orthographicSize = 10;
            

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireController : MonoBehaviour
 {
     public GameObject buttonF;
+    public Collider2D coll;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +18,23 @@ public class FireController : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
 
+       
+        if (collision.tag == "Player")
+        {
+            buttonF.SetActive(true);
+
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag=="Player")
+        {
+            buttonF.SetActive(false);
+        }
+        
+    }
 }

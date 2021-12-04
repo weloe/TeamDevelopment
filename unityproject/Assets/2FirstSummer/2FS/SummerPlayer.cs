@@ -29,6 +29,9 @@ public class SummerPlayer : MonoBehaviour
     public Transform cat;
     public GameObject black;
 
+    [Header("“Ù∆µ")]
+    public AudioSource fallcat;
+    public AudioSource npc;
     // Start is called before the first frame update
     void Start()
     {
@@ -123,13 +126,14 @@ public class SummerPlayer : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && buttonF.activeSelf)
         {
             //’æ¡¢∂Øª≠
             buttonF.SetActive(false);
             Invoke("Tumble", 1);
             black.SetActive(true);
-            
+            fallcat.Play();
+            npc.Play();
 
             //
         }

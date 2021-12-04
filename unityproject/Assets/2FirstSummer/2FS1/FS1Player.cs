@@ -23,10 +23,14 @@ public class FS1Player : MonoBehaviour
     public GameObject thankDialog;
     public GameObject cat;
 
+    public AudioSource seaAudio;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
 
         Invoke("Dialog", 2);//Æô¶¯¶Ô»°
         Invoke("baomao", 2.8f);
@@ -110,7 +114,7 @@ public class FS1Player : MonoBehaviour
     {
         
         black.SetActive(true);
-
+        seaAudio.Stop();
     }
     void StartDiary2()
     {

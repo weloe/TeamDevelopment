@@ -1527,7 +1527,6 @@ GameObject:
   - component: {fileID: 477872754}
   - component: {fileID: 477872753}
   - component: {fileID: 477872756}
-  - component: {fileID: 477872752}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1601,32 +1600,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &477872752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477872749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ba6156d86ab9d449a4624a9a2cd3bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 477872756}
-  coll: {fileID: 477872753}
-  disColl: {fileID: 477872754}
-  groundCheck: {fileID: 2060548607}
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
-  speed: 5
-  jumpForce: 12
-  isGround: 0
-  jumpPressed: 0
-  cat_LeftCheck: {fileID: 0}
-  cat_RightCheck: {fileID: 0}
-  cat: {fileID: 0}
 --- !u!58 &477872753
 CircleCollider2D:
   m_ObjectHideFlags: 0

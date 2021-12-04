@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecSpringPlayer : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class SecSpringPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        Invoke("Load2", 20f);
     }
 
     // Update is called once per frame
@@ -85,5 +86,9 @@ public class SecSpringPlayer : MonoBehaviour
             //anim.SetBool("jumping", true);
 
         }
+    }
+    void Load2()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

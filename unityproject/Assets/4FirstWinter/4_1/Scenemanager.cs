@@ -13,7 +13,7 @@ public class Scenemanager : MonoBehaviour
 
     private void Start()
     {
-
+        diary.SetActive(true);
         anim.SetBool("fadeOut", false);
         car.SetActive(false);
         

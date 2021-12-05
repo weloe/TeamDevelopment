@@ -37,7 +37,7 @@ public class PlayController : MonoBehaviour
     
     public SpriteRenderer back;
     public GameObject black;
-    public float facedirection;
+    public float horizon;
 
     [Header("音频")]
     public AudioSource baomao;
@@ -59,13 +59,13 @@ public class PlayController : MonoBehaviour
             
             Time.timeScale = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Escape)&& diary_Text.activeSelf)
-        {
+        //if (Input.GetKeyDown(KeyCode.Escape)&& diary_Text.activeSelf)
+        //{
             
-            diary_Text.SetActive(false);
+        //    diary_Text.SetActive(false);
             
-            Time.timeScale = 1;
-        }
+        //    Time.timeScale = 1;
+        //}
 
 
         Jump();
@@ -101,14 +101,25 @@ public class PlayController : MonoBehaviour
             //Invoke("StartBlack", 3);
             //Invoke("LoadNext", 4);
         }
-        if(anim.GetBool("baomao"))
+
+        if (anim.GetBool("baomao"))
         {
-            facedirection = Input.GetAxisRaw("Horizontal");
-            anim.SetFloat("baomaoMove", Mathf.Abs(facedirection));
+          horizon = Input.GetAxisRaw("Horizontal");
+            if (horizon != 0)
+            {
+                anim.SetFloat("baomaoMove", Mathf.Abs(horizon));
+            }
+            if(horizon==0)
+            {
+                anim.SetFloat("baomaoMove",0 );
+            }
+
         }
 
-        //长按判定
-        if (longButtonF.activeSelf)
+       
+
+            //长按判定
+            if (longButtonF.activeSelf)
         {
             if(Input.GetKeyDown(KeyCode.F))
             {

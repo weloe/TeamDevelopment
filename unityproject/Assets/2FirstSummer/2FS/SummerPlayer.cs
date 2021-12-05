@@ -131,6 +131,7 @@ public class SummerPlayer : MonoBehaviour
             //站立动画
             buttonF.SetActive(false);
             Invoke("Tumble", 1);
+            Invoke("LoadNext", 4.5f);
             black.SetActive(true);
             fallcat.Play();
             npc.Play();
@@ -163,7 +164,7 @@ public class SummerPlayer : MonoBehaviour
         //播放摔倒动画
         buttonF.SetActive(true);//出现buttonF
 
-        Invoke("LoadNext", 3);
+     
     }
 
     void LoadNext()

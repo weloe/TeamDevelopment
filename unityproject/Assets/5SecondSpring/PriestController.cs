@@ -22,6 +22,7 @@ public class PriestController : MonoBehaviour
     public AudioSource audio_wa;
     private void Start()
     {
+        anim.SetBool("prMove", true);
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }
     // Update is called once per frame
@@ -58,12 +59,18 @@ public class PriestController : MonoBehaviour
     void StartMemory()
     {
         memory.SetActive(true);
+        anim.SetBool("memory", true);
+    }
+    void mermoryOver()
+    {
+        anim.SetBool("memoryover", true);
+   
     }
 
     //启动Tab提示
     void StartPrompt()
     {
-        memory.SetActive(false);
+        //memory.SetActive(false);
         keyPrompt.SetActive(true);
     }
 
@@ -76,11 +83,15 @@ public class PriestController : MonoBehaviour
     {
         if (collision.tag=="ViewPlatform")
         {
+            anim.SetBool("prMove", false);
             speed = 0;
             rb.velocity = new Vector2(speed, rb.velocity.y);
             //女孩侧头看了眼观景台的方向，又低头看了眼膝盖上的盒子
             Invoke("StartMemory", 3);//延迟启动回忆
+           
             Invoke("StartPrompt", 6);//延迟启动按键提示Tab
+
+
 
         }
         if(collision.tag=="Hole")
@@ -97,6 +108,7 @@ public class PriestController : MonoBehaviour
 
     void StartDialog2()
     {
+
         dialog1.SetActive(false);
         dialog2.SetActive(true);
     }
@@ -115,5 +127,6 @@ public class PriestController : MonoBehaviour
     {
         SceneManager.LoadScene("6End");
     }
+
     
 }

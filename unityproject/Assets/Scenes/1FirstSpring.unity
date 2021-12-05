@@ -3674,7 +3674,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
-  jumpForce: 12
+  jumpForce: 0
   isGround: 0
   jumpPressed: 0
   approachButtonF: {fileID: 1201165160}

@@ -1728,7 +1728,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 2
-  jumpForce: 12
+  jumpForce: 0
   isGround: 0
   jumpPressed: 0
   buttonW: {fileID: 440598199}

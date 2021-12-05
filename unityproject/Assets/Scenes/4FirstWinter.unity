@@ -1902,7 +1902,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 2
-  jumpForce: 12
+  jumpForce: 0
   isGround: 0
   jumpPressed: 0
   cat_LeftCheck: {fileID: 0}
@@ -2015,7 +2015,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518992901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.44, y: -0.23, z: -0.24539521}
+  m_LocalPosition: {x: 1.4, y: -0.55, z: -0.24539521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

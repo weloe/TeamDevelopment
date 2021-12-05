@@ -6889,7 +6889,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 5
-  jumpForce: 13
+  jumpForce: 0
   isGround: 0
   jumpPressed: 0
   cat_LeftCheck: {fileID: 0}

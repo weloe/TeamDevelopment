@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
-public class DialogSystem : MonoBehaviour
+public class FFDiary : MonoBehaviour
 {
     public Text textLabel;
     public Image faceImage;
@@ -15,24 +14,20 @@ public class DialogSystem : MonoBehaviour
     public TextAsset textFile;
     public int index;
 
-    public GameObject black;
-
-
-
     List<string> textList = new List<string>();
 
     // Start is called before the first frame update
     void Awake()
     {
 
-        
+
         GetTextFromFile(textFile);//获得txt文件
         //index = 0;
     }
     void GetTextFromFile(TextAsset file)
     {
 
-        
+
         //textList.Clear();
         index = 0;
 
@@ -66,38 +61,22 @@ public class DialogSystem : MonoBehaviour
             //index++;
 
         }
-        if(Input.GetKeyDown(KeyCode.A) && index>=1)
+        if (Input.GetKeyDown(KeyCode.A) && index >= 1)
         {
             index = index - 1;
             textLabel.text = textList[index];
-            
+
         }
 
-        if ((Input.GetKeyDown(KeyCode.D) && index == textList.Count - 1) || Input.GetKeyDown(KeyCode.Escape))//index ==5
+        if (Input.GetKeyDown(KeyCode.D) && index == textList.Count - 1)
         {
-            
             gameObject.SetActive(false);
             index = 0;
-            Invoke("StartBlack", 1);
-            Invoke("LoadNext", 2);
-
-
+            SceneManager.LoadScene("4FirstWinter");
             return;
-            
 
         }
-        
 
 
     }
-    void StartBlack()
-    {
-        black.SetActive(true);
-    }
-    void LoadNext()
-    {
-        SceneManager.LoadScene("2FirstSummer");
-    }
-
-
 }

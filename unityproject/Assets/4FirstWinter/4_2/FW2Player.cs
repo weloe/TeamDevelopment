@@ -31,6 +31,7 @@ public class FW2Player : MonoBehaviour
     public Collider2D fireColl;
     public GameObject back1;
     public GameObject back2;
+    public GameObject black;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +76,8 @@ public class FW2Player : MonoBehaviour
             back2.SetActive(true);
             //Éú»ð
             fireColl.enabled = false;
+
+            Invoke("LoadNext", 1);
         }
     }
 
@@ -141,7 +144,7 @@ public class FW2Player : MonoBehaviour
 
     void LoadNext()
     {
-        SceneManager.LoadScene("5SecondSpring");
+        black.SetActive(true);
     }
     
 

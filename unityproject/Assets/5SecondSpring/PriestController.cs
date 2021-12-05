@@ -19,7 +19,7 @@ public class PriestController : MonoBehaviour
     public GameObject dialog2;
     public GameObject player;
     public Animator anim;
-
+    public AudioSource audio_wa;
     private void Start()
     {
         rb.velocity = new Vector2(speed, rb.velocity.y);
@@ -89,6 +89,7 @@ public class PriestController : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
             player.SetActive(true);
             anim.SetBool("SSPriest", true);
+            audio_wa.Play();
         }
     }
 

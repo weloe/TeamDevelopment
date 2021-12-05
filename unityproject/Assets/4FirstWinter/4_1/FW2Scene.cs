@@ -13,7 +13,7 @@ public class FW2Scene : MonoBehaviour
 
     private void Start()
     {
-        diary.SetActive(true);
+        Invoke("Diary", 2);
         anim.SetBool("fadeIn", true);
         anim.SetBool("fadeOut", false);
         car.SetActive(false);
@@ -37,5 +37,9 @@ public class FW2Scene : MonoBehaviour
     void Load()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    void Diary()
+    {
+        diary.SetActive(true);
     }
 }

@@ -29,7 +29,7 @@ public class SecSpringPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Invoke("Load2", 20f);
+        
     }
 
     // Update is called once per frame

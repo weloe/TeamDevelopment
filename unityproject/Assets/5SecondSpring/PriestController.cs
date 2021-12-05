@@ -90,6 +90,7 @@ public class PriestController : MonoBehaviour
             player.SetActive(true);
             anim.SetBool("SSPriest", true);
             audio_wa.Play();
+            Invoke("LoadEnd", 3);
         }
     }
 
@@ -110,6 +111,9 @@ public class PriestController : MonoBehaviour
         dialog2.SetActive(false);
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }
-
+    void LoadEnd()
+    {
+        SceneManager.LoadScene("6End");
+    }
     
 }

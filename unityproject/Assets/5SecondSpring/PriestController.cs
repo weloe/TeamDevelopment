@@ -90,7 +90,7 @@ public class PriestController : MonoBehaviour
             player.SetActive(true);
             anim.SetBool("SSPriest", true);
             audio_wa.Play();
-            Invoke("LoadEnd", 3);
+            Invoke("LoadEnd", 6);
         }
     }
 

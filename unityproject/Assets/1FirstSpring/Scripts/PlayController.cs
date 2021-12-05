@@ -52,13 +52,13 @@ public class PlayController : MonoBehaviour
     void Update()
     {
         //开关笔记本
-        if ( Input.GetKeyDown(KeyCode.Tab))
-        {
+        //if ( Input.GetKeyDown(KeyCode.Tab))
+        //{
             
-            diary_Text.SetActive(true);
+        //    diary_Text.SetActive(true);
             
-            Time.timeScale = 0;
-        }
+        //    Time.timeScale = 0;
+        //}
         //if (Input.GetKeyDown(KeyCode.Escape)&& diary_Text.activeSelf)
         //{
             
@@ -216,6 +216,7 @@ public class PlayController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+
         if(collision.tag=="CatCheck")
         {
             approachButtonF.SetActive(false);

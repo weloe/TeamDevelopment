@@ -22,6 +22,7 @@ public class FallPlayer : MonoBehaviour
     public Transform cat_LeftCheck;
     public Transform cat_RightCheck;
     public Transform cat;
+    public GameObject catcontroll;
     [Header("日记")]
     public GameObject diary;
     bool sum = false;
@@ -30,9 +31,15 @@ public class FallPlayer : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody2D>();
+        Invoke("StartCat",8);
         //Invoke("revealDialog", 2f);//延迟显示日记内容
     }
+    void StartCat()
+    {
+        catcontroll.SetActive(true);
+    }
 
+  
     // Update is called once per frame
     void Update()
     {

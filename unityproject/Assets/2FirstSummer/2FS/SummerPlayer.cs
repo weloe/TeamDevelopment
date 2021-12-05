@@ -126,7 +126,7 @@ public class SummerPlayer : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.F) && buttonF.activeSelf)
+        /*if (Input.GetKeyDown(KeyCode.F) && buttonF.activeSelf)
         {
             //站立动画
             buttonF.SetActive(false);
@@ -137,7 +137,7 @@ public class SummerPlayer : MonoBehaviour
             npc.Play();
 
             //
-        }
+        }*/
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -162,9 +162,12 @@ public class SummerPlayer : MonoBehaviour
     void Tumble()
     {
         //播放摔倒动画
-        buttonF.SetActive(true);//出现buttonF
-
-     
+        //buttonF.SetActive(true);//出现buttonF
+        black.SetActive(true);
+        fallcat.Play();
+        npc.Play();
+        Invoke("LoadNext", 3f);
+        
     }
 
     void LoadNext()

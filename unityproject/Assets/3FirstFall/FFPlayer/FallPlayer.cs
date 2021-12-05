@@ -30,7 +30,7 @@ public class FallPlayer : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody2D>();
-        Invoke("revealDialog", 2f);//延迟显示日记内容
+        //Invoke("revealDialog", 2f);//延迟显示日记内容
     }
 
     // Update is called once per frame

@@ -73,7 +73,7 @@ public class DialogSystem : MonoBehaviour
             
         }
 
-        if ((Input.GetKeyDown(KeyCode.D) && index == textList.Count - 1) || Input.GetKeyDown(KeyCode.Escape))//index ==5
+        if ((Input.GetKeyDown(KeyCode.D) && index == 2))//index ==5
         {
             
             gameObject.SetActive(false);

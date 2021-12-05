@@ -67,7 +67,7 @@ public class FSPDiary : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && index == 2)
+        if (Input.GetKeyDown(KeyCode.D) && index == textList.Count - 1)
         {
             gameObject.SetActive(false);
             index = 0;

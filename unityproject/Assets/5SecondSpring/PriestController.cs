@@ -97,6 +97,7 @@ public class PriestController : MonoBehaviour
         if(collision.tag=="Hole")
         {
             speed = 0;
+            anim.SetBool("prMove", false);
             rb.velocity = new Vector2(speed, rb.velocity.y);
             player.SetActive(true);
             anim.SetBool("SSPriest", true);
@@ -119,6 +120,7 @@ public class PriestController : MonoBehaviour
     }
     void LoadCemetery()
     {
+        anim.SetBool("prMove", true);
         speed = 2;
         dialog2.SetActive(false);
         rb.velocity = new Vector2(speed, rb.velocity.y);
